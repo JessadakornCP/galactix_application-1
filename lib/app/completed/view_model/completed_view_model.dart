@@ -7,7 +7,7 @@ class CompletedViewModel extends BaseViewModel {
 
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
 
-  late GoogleMapController googleMapController;
+  GoogleMapController? googleMapController;
 
   GoogleMapController? mapController;
 
@@ -21,6 +21,6 @@ class CompletedViewModel extends BaseViewModel {
   );
 
   void dispose() {
-    googleMapController.dispose();
+    googleMapController?.dispose();
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:galactix_application/app/completed/view/completed_screen.dart';
 import 'package:galactix_application/app/home/view/home_screen.dart';
+import 'package:galactix_application/app/parcel/view/parcel_screen.dart';
 import 'package:galactix_application/core/widgets/widgets.dart';
 import 'navigation_constants.dart';
 
@@ -16,6 +18,18 @@ class NavigationRoute {
         return normalNavigate(
           const HomeScreen(),
           AppNavConstants.DEFALT,
+          settings.arguments,
+        );
+      case AppNavConstants.PARCEL:
+        return normalNavigate(
+          const ParcelScreen(),
+          AppNavConstants.PARCEL,
+          settings.arguments,
+        );
+      case AppNavConstants.COMPLETED:
+        return normalNavigate(
+          const CompletedScreen(),
+          AppNavConstants.COMPLETED,
           settings.arguments,
         );
       default:

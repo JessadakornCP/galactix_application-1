@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:galactix_application/app/completed/view/completed_screen.dart';
+import 'package:galactix_application/app/home/view/home_screen.dart';
 import 'package:galactix_application/config/app_theme.dart';
 import 'package:galactix_application/core/navigation/navigation.dart';
 import 'package:galactix_application/core/provider/provider_list.dart';
@@ -27,18 +26,10 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [...ApplicationProvider.instance.dependItems],
       child: MaterialApp(
-        localizationsDelegates: const [
-          DefaultCupertinoLocalizations.delegate,
-        ],
-        // locale: const Locale('th', 'TH'), // Current locale
-        supportedLocales: const [
-          Locale('en', 'US'), // English
-          Locale('th', 'TH'), // Thai
-        ],
         themeMode: ThemeMode.light,
         theme: AppTheme.lightTheme(context),
         darkTheme: AppTheme.darkTheme(context),
-        home: const CompletedScreen(),
+        home: const HomeScreen(),
         onGenerateRoute: NavigationRoute.instance.generateRoute,
       ),
     );

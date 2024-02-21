@@ -23,13 +23,13 @@ class MenuDrawerViewModel extends BaseViewModel {
   MenuDrawer parcel = MenuDrawer(
     icon: ImageConstants.instance.parcel,
     name: 'Parcel',
-    nav: 'nav',
+    nav: AppNavConstants.PARCEL,
     background: AppColors.instance.red,
   );
   MenuDrawer completed = MenuDrawer(
     icon: ImageConstants.instance.completed,
     name: 'Completed',
-    nav: 'nav',
+    nav: AppNavConstants.COMPLETED,
     background: AppColors.instance.brown,
   );
 

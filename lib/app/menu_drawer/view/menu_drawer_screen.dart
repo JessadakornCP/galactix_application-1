@@ -5,6 +5,8 @@ import 'package:galactix_application/config/config.dart';
 import 'package:galactix_application/core/base/base_screen.dart';
 import 'package:galactix_application/core/constants/image/image_constants.dart';
 import 'package:galactix_application/core/extension/extension.dart';
+import 'package:galactix_application/core/navigation/navigation.dart';
+import 'package:galactix_application/core/widgets/inkwell.dart';
 import 'package:galactix_application/core/widgets/textformfield_widget.dart';
 
 class MenuDrawerScreen extends StatelessWidget {
@@ -94,24 +96,27 @@ class MenuDrawerScreen extends StatelessWidget {
       itemCount: viewmodel.menuDrawerList.length,
       itemBuilder: (context, index) {
         MenuDrawer data = viewmodel.menuDrawerList[index];
-        return Container(
-          color: data.background,
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: context.normalValue,
-              vertical: context.lowValue,
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  child: Image.asset(data.icon),
-                ),
-                Text(
-                  data.name,
-                  style: AppTextStyle(context).bodyNormalWhite,
-                ),
-              ],
+        return BuildInkWell(
+          onTap: () => AppNav.toReplacementName(context, data.nav),
+          child: Container(
+            color: data.background,
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: context.normalValue,
+                vertical: context.lowValue,
+              ),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: Image.asset(data.icon),
+                  ),
+                  Text(
+                    data.name,
+                    style: AppTextStyle(context).bodyNormalWhite,
+                  ),
+                ],
+              ),
             ),
           ),
         );
